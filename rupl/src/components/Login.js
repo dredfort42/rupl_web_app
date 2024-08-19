@@ -1,7 +1,7 @@
 function Login() {
     return (
         <div>
-            <h2>Login form</h2>
+            <h1>Login form</h1>
             <p>Username</p>
             <p>Password</p>
         </div>
