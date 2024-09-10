@@ -1,21 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
 .header {
     display: flex;
-    height: 40px;
-    padding: 10px 20px;
-    background-color: #f4f4f4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    /* height: 60px; */
+    /* padding: 10px 20px;  */
+    /* background-color: #f4f4f4; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .header h1 {
     width: 100%;
+    line-height: 31px;
     text-align: left;
+    font-family: 'Anta', sans-serif;
+    margin: 7px auto 13px 10px;
+}
+
+.header h1 a {
+    color: rgb(13, 202, 240);
+    text-decoration: none;
+}
+
+.header nav {
+    margin-left: auto;
+    margin: 10px 10px 10px auto;
+    display: flex;
 }
 
 .header nav a {
     margin-left: 10px;
-    color: #333;
+
+    color: rgb(13, 202, 240);
     text-decoration: none;
-    border: 1px solid #333;
+    border: 1px solid rgb(13, 202, 240);
     border-radius: 5px;
     padding: 5px 10px;
+}
+
+.header nav a.filled {
+    color: #000;
+    background-color: rgb(13, 202, 240);
+}
+
+.header nav a:hover {
+    background-color: #333;
+    color: #fff;
 }
