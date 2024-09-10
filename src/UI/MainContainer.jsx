@@ -1,10 +1,11 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 
 function MainContainer() {
+    const location = useLocation();
     return (
         <>
-            <Header />
+            {location.pathname !== '/login' && <Header />}
             <Outlet />
         </>
     );
