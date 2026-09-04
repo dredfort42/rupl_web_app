@@ -1,54 +1,54 @@
 # rupl.org
 
-Сайт проекта **Rupl** — беговой коуч для Apple Watch.
+Website for **Rupl** — a running coach for Apple Watch.
 
-Публикуется через GitHub Pages из ветки `main`, каталог — корень.
-Домен `rupl.org` задан файлом `CNAME`; сертификат HTTPS выпускает сам GitHub,
-отдельный acme.sh больше не нужен.
+Published through GitHub Pages from `main`, served from the repository root.
+The `rupl.org` domain is set by the `CNAME` file; GitHub issues the HTTPS
+certificate itself, so the old acme.sh wildcard is no longer needed.
 
-## Что здесь лежит
+## What lives here
 
-Только **собранный** сайт: статические страницы, стили и ассеты.
-Ни JavaScript, ни сборочных зависимостей, ни Node — на страницах нет ни одного
-скрипта, многоязычность сделана отдельными страницами на язык, переключатель —
-обычные ссылки.
+The built site and nothing else: static pages, one stylesheet, a few assets.
+No JavaScript, no build dependencies, no Node — not a single script tag on any
+page. Multilingual means one page per language, and the switcher is plain links.
 
 ```
-index.html            английский, канонический
-ru/index.html         русский
-privacy/, ru/privacy/ политика приватности
-support/, ru/support/ поддержка
-assets/               знак и иконки
+index.html            English, canonical
+ru/index.html         Russian
+privacy/, ru/privacy/ privacy policy
+support/, ru/support/ support
+assets/               icons
 styles.css
 CNAME                 rupl.org
 ```
 
-## Исходник
+## Source
 
-Шаблоны, переводы и сборщик живут в приватном репозитории `dredfort42/rupl`:
-`site/` (шаблоны, `i18n/*.json`, стили) и `scripts/site_build.py`.
-Собирается одной командой оттуда:
+Templates, translations and the build script live in the private repository
+`dredfort42/rupl`, under `site/` and `scripts/site_build.py`. One command builds
+this directory from there:
 
 ```bash
 python3 scripts/site_build.py ../RUPL-SITE
 ```
 
-Сборщик отказывается собирать, если наборы ключей в языковых файлах разошлись
-или в готовой странице осталась незаполненная подстановка. Править файлы
-**здесь** руками не нужно: следующая сборка их перезапишет.
+The build refuses to run when the key sets of the language files disagree, or
+when a rendered page still holds an unresolved substitution, and it reports any
+file in this directory that it did not produce. **Do not edit files here by
+hand** — the next build overwrites them.
 
-Добавить язык — положить `site/i18n/<код>.json` с тем же набором ключей.
+Adding a language is one `site/i18n/<code>.json` file with the same keys.
 
-## Лицензия
+## Licence
 
-Тексты сайта и бренд — **CC BY-SA 4.0** (`LICENSE`).
+Site text and brand are under **CC BY-SA 4.0** (`LICENSE`).
 
-Из лицензии выведены знак «Русло» и название продукта: это опознаватели,
-а не переиспользуемый ресурс. Прежняя GPL-3.0, доставшаяся от веб-приложения
-2024 года, снята — она конфликтует с распространением в App Store.
+The mark and the product name are excluded: they are identifiers, not reusable
+assets. The GPL-3.0 inherited from the 2024 web application is gone —
+it conflicts with App Store distribution.
 
-## История
+## History
 
-До сентября 2026 в этом репозитории лежало веб-приложение 2024 года
-(React, аккаунты, вход против сервера, которого больше нет). Оно удалено
-из рабочего дерева, но осталось в истории: `git checkout df48804 -- <путь>`.
+Until September 2026 this repository held the 2024 web application: React,
+accounts, sign-in against a server that no longer exists. It was removed from
+the working tree but remains in history — `git checkout df48804 -- <path>`.
