@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="260" height="200" role="img" aria-label="Rupl">
-  <title>Rupl — знак «Русло» (финал F)</title>
-  <!-- Сетка 260×200. Штрих 46 (осевая линия смещена внутрь на 23), внешний радиус 96 → осевой 73. -->
-  <path d="M23 0 V104 A73 73 0 0 0 96 177 H164 A73 73 0 0 0 237 104 V0"
-        fill="none" stroke="currentColor" stroke-width="46"/>
-  <circle cx="130" cy="94" r="42" fill="currentColor"/>
-</svg>

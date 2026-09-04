@@ -35,7 +35,10 @@ a:hover, a:focus-visible { text-decoration: underline; }
 }
 .mark { display: flex; align-items: center; gap: 10px; color: var(--text); }
 .mark span { font-weight: 600; letter-spacing: .01em; font-size: 19px; }
-.mark img { display: block; }
+.mark-svg {
+  display: block; width: 46px; height: auto;
+  color: var(--accent);           /* знак несёт currentColor: BRAND — маркетинг цианом */
+}
 .nav { display: flex; gap: 20px; font-size: 15px; }
 .nav a[aria-current="page"] { color: var(--muted); }
 
