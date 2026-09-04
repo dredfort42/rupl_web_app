@@ -1,0 +1,89 @@
+/* Rupl — стили сайта. Палитра и правила — docs/BRAND.md.
+   Фон всегда #000000. Красный (status.critical) на сайте не используется:
+   он зарезервирован за критическим пульсом в приложении и больше нигде. */
+
+:root {
+  --bg: #000000;
+  --accent: #0DCAF0;      /* color.brand.accent — вне бега: иконка, маркетинг */
+  --text: #F2F5F6;        /* color.text.primary   19.2:1 */
+  --muted: #9BA7AE;       /* color.text.secondary  8.5:1 */
+  --caption: #767F86;     /* color.text.caption    5.2:1 */
+  --steady: #2FBF58;      /* color.status.steady */
+  --line: #1C2225;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  padding: 0 20px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; }
+
+.top {
+  max-width: 900px; margin: 0 auto; padding: 28px 0 8px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
+}
+.mark { display: flex; align-items: center; gap: 10px; color: var(--text); }
+.mark span { font-weight: 600; letter-spacing: .01em; font-size: 19px; }
+.mark img { display: block; }
+.nav { display: flex; gap: 20px; font-size: 15px; }
+.nav a[aria-current="page"] { color: var(--muted); }
+
+main { max-width: 900px; margin: 0 auto; }
+
+.hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+.hero h1 {
+  font-size: clamp(30px, 6vw, 46px); line-height: 1.15;
+  margin: 0 0 18px; font-weight: 600; letter-spacing: -.015em;
+}
+.lede { font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); margin: 0; max-width: 62ch; }
+
+.grid {
+  display: grid; gap: 34px 40px; padding: 44px 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.grid .wide { grid-column: 1 / -1; }
+.grid h2 {
+  font-size: 15px; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 10px; font-weight: 600;
+}
+.grid p { margin: 0; max-width: 62ch; }
+
+.status {
+  border-top: 1px solid var(--line); padding: 34px 0 10px;
+}
+.status h2 {
+  font-size: 15px; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--steady); margin: 0 0 10px; font-weight: 600;
+}
+.status p { margin: 0; color: var(--muted); max-width: 62ch; }
+
+.doc { padding: 44px 0 10px; }
+.doc h1 { font-size: clamp(26px, 4.4vw, 34px); margin: 0 0 6px; font-weight: 600; }
+.doc h2 { font-size: 17px; margin: 30px 0 8px; font-weight: 600; }
+.doc p { margin: 0 0 14px; max-width: 68ch; }
+.updated { color: var(--caption); font-size: 14px; margin: 0 0 26px; }
+.contact { margin-top: 30px; }
+
+.foot {
+  max-width: 900px; margin: 0 auto; padding: 46px 0 40px;
+  border-top: 1px solid var(--line); margin-top: 40px;
+  color: var(--caption); font-size: 14px;
+}
+.foot p { margin: 0 0 8px; }
+.langs { margin-bottom: 16px !important; }
+.langs a { margin-right: 16px; }
+.langs strong { color: var(--muted); font-weight: 400; margin-right: 16px; }
+.fine { max-width: 68ch; }
+
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
